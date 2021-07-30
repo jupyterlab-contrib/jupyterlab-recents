@@ -1,6 +1,6 @@
 # jupyterlab_recents
 
-![Github Actions Status](https://github.com/NERSC/jupyterlab-recents/workflows/Build/badge.svg)[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/NERSC/jupyterlab-recents/main?urlpath=lab)
+![Github Actions Status](https://github.com/jupyterlab-contrib/jupyterlab-recents/workflows/Build/badge.svg)[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyterlab-recents/main?urlpath=lab)
 
 Track recent files and folders.
 
@@ -12,6 +12,12 @@ Track recent files and folders.
 
 ```bash
 pip install jupyterlab_recents
+```
+
+or
+
+```bash
+conda install -c conda-forge jupyterlab_recents
 ```
 
 ## Contributing
@@ -67,4 +73,4 @@ jupyter labextension install jupyterlab-recents@1.0.1
 ```
 
 Or use the tagged 1.0.0 release at:
-https://github.com/NERSC/jupyterlab-recents/tree/v1.0.1
+https://github.com/jupyterlab-contrib/jupyterlab-recents/tree/v1.0.1
