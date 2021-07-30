@@ -13,6 +13,8 @@ import { Menu } from '@lumino/widgets';
 
 import { types, IRecents } from "./token"
 
+export { IRecents } from './token';
+
 namespace PluginIDs {
   export const recents = 'jupyterlab-recents';
 }
