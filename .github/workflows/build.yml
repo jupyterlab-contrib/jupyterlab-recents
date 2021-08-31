@@ -52,5 +52,5 @@ jobs:
         jlpm run eslint:check
         python -m pip install .
 
-        jupyter labextension list 2>&1 | grep -ie "jupyterlab-recents.*OK"
+        jupyter labextension list 2>&1 | grep -ie "@jlab-enhanced/recents.*OK"
         python -m jupyterlab.browser_check
