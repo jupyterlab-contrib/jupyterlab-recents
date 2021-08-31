@@ -1,6 +1,10 @@
 # jupyterlab_recents
 
-![Github Actions Status](https://github.com/jupyterlab-contrib/jupyterlab-recents/workflows/Build/badge.svg)[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyterlab-recents/main?urlpath=lab)
+[![Github Actions Status](https://github.com/jupyterlab-contrib/jupyterlab-recents/workflows/Build/badge.svg)](https://github.com/jupyterlab-contrib/jupyterlab-recents/actions?query=workflow%3ABuild)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyterlab-recents/master?urlpath=lab)
+[![npm](https://img.shields.io/npm/v/@jlab-enhanced/recents)](https://www.npmjs.com/package/@jlab-enhanced/recents)
+[![PyPI](https://img.shields.io/pypi/v/jupyterlab-recents)](https://pypi.org/project/jupyterlab-favorites)
+[![conda-forge](https://img.shields.io/conda/vn/conda-forge/jupyterlab-recents)](https://anaconda.org/conda-forge/jupyterlab-recents)
 
 Track recent files and folders.
 
@@ -11,13 +15,13 @@ Track recent files and folders.
 ## Install
 
 ```bash
-pip install jupyterlab_recents
+pip install jupyterlab-recents
 ```
 
 or
 
 ```bash
-conda install -c conda-forge jupyterlab_recents
+conda install -c conda-forge jupyterlab-recents
 ```
 
 ## Contributing

@@ -1,6 +1,6 @@
 {
   "name": "@jlab-enhanced/recents",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Track recent files and folders.",
   "keywords": [
     "jupyter",
