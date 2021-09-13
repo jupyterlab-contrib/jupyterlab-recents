@@ -1,5 +1,6 @@
 # jupyterlab_recents
 
+[![Extension status](https://img.shields.io/badge/status-ready-success "ready to be used")](https://jupyterlab-contrib.github.io/)
 [![Github Actions Status](https://github.com/jupyterlab-contrib/jupyterlab-recents/workflows/Build/badge.svg)](https://github.com/jupyterlab-contrib/jupyterlab-recents/actions?query=workflow%3ABuild)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyterlab-contrib/jupyterlab-recents/master?urlpath=lab)
 [![npm](https://img.shields.io/npm/v/@jlab-enhanced/recents)](https://www.npmjs.com/package/@jlab-enhanced/recents)
