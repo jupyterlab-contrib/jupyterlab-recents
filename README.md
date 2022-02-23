@@ -9,6 +9,8 @@
 
 Track recent files and folders.
 
+![JupyterLab Recents extension demonstration](https://raw.githubusercontent.com/jupyterlab-contrib/jupyterlab-recents/master/jupyterlab-recents.gif)
+
 ## Requirements
 
 - JupyterLab >= 3.0
