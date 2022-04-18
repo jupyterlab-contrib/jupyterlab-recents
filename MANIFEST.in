@@ -14,6 +14,9 @@ graft src
 graft style
 prune **/node_modules
 prune lib
+prune binder
+
+exclude jupyterlab-recents.gif
 
 # Patterns to exclude from any directory
 global-exclude *~
