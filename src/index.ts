@@ -11,7 +11,7 @@ import { CommandRegistry } from '@lumino/commands';
 import { Signal } from '@lumino/signaling';
 import { Menu } from '@lumino/widgets';
 
-import { types, IRecents } from "./token"
+import { types, IRecents } from './token';
 
 export { IRecents } from './token';
 
@@ -208,7 +208,7 @@ const extension: JupyterFrontEndPlugin<IRecents> = {
     stateDB: IStateDB,
     mainMenu: IMainMenu,
     docManager: IDocumentManager
-  ) : IRecents => {
+  ): IRecents => {
     console.log('JupyterLab extension jupyterlab-recents is activated!');
     const { commands, serviceManager } = app;
     const recentsManager = new RecentsManager(
