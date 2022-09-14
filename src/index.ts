@@ -11,6 +11,10 @@ import { CommandRegistry } from '@lumino/commands';
 import { Signal } from '@lumino/signaling';
 import { Menu } from '@lumino/widgets';
 
+import { types, IRecents } from "./token"
+
+export { IRecents } from './token';
+
 namespace PluginIDs {
   export const recents = 'jupyterlab-recents';
 }
@@ -22,14 +26,6 @@ namespace StateIDs {
 namespace CommandIDs {
   export const openRecent = `${PluginIDs.recents}:open-recent`;
   export const clearRecents = `${PluginIDs.recents}:clear-recents`;
-}
-
-namespace types {
-  export type Recent = {
-    root: string;
-    path: string;
-    contentType: string;
-  };
 }
 
 namespace utils {
@@ -44,7 +40,7 @@ namespace utils {
   }
 }
 
-class RecentsManager {
+class RecentsManager implements IRecents {
   public recentsMenu: Menu;
   private recentsChanged = new Signal<this, types.Recent[]>(this);
   private serverRoot: string;
@@ -202,16 +198,17 @@ class RecentsManager {
   }
 }
 
-const extension: JupyterFrontEndPlugin<void> = {
+const extension: JupyterFrontEndPlugin<IRecents> = {
   id: PluginIDs.recents,
   autoStart: true,
   requires: [IStateDB, IMainMenu, IDocumentManager],
+  provides: IRecents,
   activate: (
     app: JupyterFrontEnd,
     stateDB: IStateDB,
     mainMenu: IMainMenu,
     docManager: IDocumentManager
-  ) => {
+  ) : IRecents => {
     console.log('JupyterLab extension jupyterlab-recents is activated!');
     const { commands, serviceManager } = app;
     const recentsManager = new RecentsManager(
@@ -302,6 +299,7 @@ const extension: JupyterFrontEndPlugin<void> = {
       console.debug(e);
     }
     recentsManager.init();
+    return recentsManager;
   }
 };
 
