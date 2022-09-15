@@ -159,15 +159,16 @@ export class RecentsManager implements IRecents, IDisposable {
           frequency: {
             interval: value * 1000,
             backoff: true,
-            max: 300 * 1000
+            max: Math.max(300 * 1000, 5 * value * 1000)
           },
           name: `${PluginIDs.recents}:recents`,
           standby: 'when-hidden'
         });
       } else {
         this._poll.frequency = {
-          ...this._poll.frequency,
-          interval: value * 1000
+          interval: value * 1000,
+          backoff: true,
+          max: Math.max(300 * 1000, 5 * value * 1000)
         };
       }
     }
@@ -252,7 +253,7 @@ export class RecentsManager implements IRecents, IDisposable {
   private _serverRoot: string;
   private _stateDB: IStateDB;
   private _contentsManager: ContentsManager;
-  private _recents: Recents.Recent[];
+  private _recents: Recents.Recent[] = [];
   // Will store a Timemout call that saves recents changes after a delay
   private _saveRoutine: ReturnType<typeof setTimeout>;
   // Whether there are local changes sent to be recorded without verification

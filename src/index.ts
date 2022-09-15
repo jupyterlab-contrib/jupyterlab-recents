@@ -29,7 +29,7 @@ class RecentsMenu extends Menu {
   }
 
   protected onBeforeAttach(msg: Message): void {
-    if (this._manager.isPolling()) {
+    if (!this._manager.isPolling()) {
       const timeout = new PromiseDelegate<void>();
       setTimeout(() => {
         timeout.reject('Recents validation timed out.');
