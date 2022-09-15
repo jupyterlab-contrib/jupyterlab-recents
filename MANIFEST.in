@@ -1,5 +1,5 @@
 include LICENSE
-include README.md
+include *.md
 include pyproject.toml
 
 include package.json
@@ -13,6 +13,7 @@ graft jupyterlab_recents/labextension
 graft src
 graft style
 graft schema
+graft ui-tests
 prune **/node_modules
 prune lib
 prune binder
