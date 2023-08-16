@@ -130,13 +130,15 @@ const extension: JupyterFrontEndPlugin<IRecents> = {
       );
     };
 
-    Promise.all([
-      app.restored,
-      settingRegistry.load(`${PluginIDs.contrib}:plugin`)
-    ]).then(([_, settings]) => {
-      settings.changed.connect(updateSettings);
-      updateSettings(settings);
-    });
+    if (settingRegistry) {
+      Promise.all([
+        app.restored,
+        settingRegistry.load(`${PluginIDs.contrib}:plugin`)
+      ]).then(([_, settings]) => {
+        settings.changed.connect(updateSettings);
+        updateSettings(settings);
+      });
+    }
 
     docManager.activateRequested.connect(async (_, path) => {
       const item = await docManager.services.contents.get(path, {
