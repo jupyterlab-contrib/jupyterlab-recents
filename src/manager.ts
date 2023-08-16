@@ -1,5 +1,5 @@
 import { PageConfig } from '@jupyterlab/coreutils';
-import { ContentsManager } from '@jupyterlab/services';
+import { Contents, ServerConnection } from '@jupyterlab/services';
 import { IStateDB } from '@jupyterlab/statedb';
 import { IDisposable } from '@lumino/disposable';
 import { Poll } from '@lumino/polling';
@@ -19,7 +19,7 @@ export namespace Utils {
 }
 
 export class RecentsManager implements IRecents, IDisposable {
-  constructor(stateDB: IStateDB, contents: ContentsManager) {
+  constructor(stateDB: IStateDB, contents: Contents.IManager) {
     this._serverRoot = PageConfig.getOption('serverRoot');
     this._stateDB = stateDB;
     this._contentsManager = contents;
@@ -204,13 +204,13 @@ export class RecentsManager implements IRecents, IDisposable {
           await this._contentsManager.get(r.path, { content: false });
           return null;
         } catch (e) {
-          if (e.response.status === 404) {
+          if ((e as ServerConnection.ResponseError).response?.status === 404) {
             return r.path;
           }
         }
       })
     );
-    return invalidPathsOrNulls.filter(x => x !== null);
+    return invalidPathsOrNulls.filter(x => typeof x === 'string') as string[];
   }
 
   /**
@@ -252,10 +252,10 @@ export class RecentsManager implements IRecents, IDisposable {
   private _recentsChanged = new Signal<this, Recents.Recent[]>(this);
   private _serverRoot: string;
   private _stateDB: IStateDB;
-  private _contentsManager: ContentsManager;
+  private _contentsManager: Contents.IManager;
   private _recents: Recents.Recent[] = [];
   // Will store a Timemout call that saves recents changes after a delay
-  private _saveRoutine: ReturnType<typeof setTimeout>;
+  private _saveRoutine: ReturnType<typeof setTimeout> | undefined;
   // Whether there are local changes sent to be recorded without verification
   private _awaitingSaveCompletion = false;
 

@@ -1,0 +1,19 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.1.0
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: ''
+author_name: Trevor Slaton
+data_format: string
+file_extension: ''
+has_binder: true
+has_settings: true
+kind: frontend
+labextension_name: '@jlab-enhanced/recents'
+mimetype: ''
+mimetype_name: ''
+project_short_description: Track recent files and folders.
+python_name: jupyterlab_recents
+repository: https://github.com/jupyterlab-contrib/jupyterlab-recents.git
+test: true
+viewer_name: ''
+
