@@ -13,8 +13,10 @@ test.use({
 
 test('should list opened file under recents', async ({ page }) => {
   await page.getByRole('menuitem', { name: 'File' }).click();
-  await page.locator('#jp-mainmenu-file').getByText('New', { exact: true }).click();
-
+  await page
+    .locator('#jp-mainmenu-file')
+    .getByText('New', { exact: true })
+    .click();
 
   const [filePage] = await Promise.all([
     page.waitForEvent('popup'),
