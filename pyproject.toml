@@ -48,7 +48,7 @@ build-function = "hatch_jupyter_builder.npm_builder"
 ensured-targets = [
     "jupyterlab_recents/labextension/package.json",
 ]
-skip-if-exists = ["jupyterlab_recents/labextension/static/index.js"]
+skip-if-exists = ["jupyterlab_recents/labextension/static/style.js"]
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 build_cmd = "build:prod"
