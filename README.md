@@ -7,13 +7,17 @@
 [![PyPI](https://img.shields.io/pypi/v/jupyterlab-recents)](https://pypi.org/project/jupyterlab-recents)
 [![conda-forge](https://img.shields.io/conda/vn/conda-forge/jupyterlab-recents)](https://anaconda.org/conda-forge/jupyterlab-recents)
 
+> [!IMPORTANT]  
+> This extension has been merged into JupyterLab/Notebook.
+> You should not install this extension when using JupyterLab 4.2 or Notebook 7.2 (or newer), as it may interfere with the built-in functionality.
+
 Track recent files and folders.
 
 ![JupyterLab Recents extension demonstration](https://raw.githubusercontent.com/jupyterlab-contrib/jupyterlab-recents/master/jupyterlab-recents.gif)
 
 ## Requirements
 
-- JupyterLab >= 3.0 and Notebooo >= 7.0
+- JupyterLab >=3.0,<= 4.1 or Noteboook >=7.0,<=7.1
 
 ## Install
 
